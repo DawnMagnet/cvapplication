@@ -105,7 +105,7 @@ def drawMatches(
     """
     (hA, wA) = imageA.shape[:2]
     (hB, wB) = imageB.shape[:2]
-    vis = np.zeros((max(hA, hB), wA + wB, 3), dtype="uint8")
+    vis = np.zeros((max(hA, hB), wA + wB, 4), dtype="uint8")
     vis[0:hA, 0:wA] = imageA
     vis[0:hB, wA:] = imageB
     for (trainIdx, queryIdx), s in zip(matches, status):
@@ -182,8 +182,11 @@ def stitch(
 #     )
 # )
 
+st.set_page_config(layout="wide")
+
+
 """
-# 作业1 - 基于SIFT图像特征点检测以及拼接
+# 基于SIFT图像特征点检测以及拼接
 
 SIFT算法由David Lowe于1999年提出，它是一种用于检测和描述图像中局部特征的方法。SIFT算法的主要步骤包括尺度空间极值检测、关键点定位、方向赋值和关键点描述。这些步骤共同确保了特征点的尺度不变性和旋转不变性，使得SIFT算法在图像拼接等应用中表现出色。
 """
@@ -195,20 +198,17 @@ with col1:
         help="示例图片位置:examples/work1/left.png",
         accept_multiple_files=False,
     )
-if up1:
-    with col2:
+    if up1:
         st.image(up1.getvalue())
 
-col1, col2 = st.columns(2)
-with col1:
+with col2:
     up2 = st.file_uploader(
         "上传第二个图片",
         type=["jpg", "png"],
         help="示例图片位置:examples/work1/right.png",
         accept_multiple_files=False,
     )
-if up2:
-    with col2:
+    if up2:
         st.image(up2.getvalue())
 
 
