@@ -9,6 +9,7 @@ dependencies = [
     "altair",
     "pandas",
     "streamlit",
+    "opencv-contrib-python~=4.10.0.82",
 ]
 readme = "README.md"
 requires-python = ">= 3.11"

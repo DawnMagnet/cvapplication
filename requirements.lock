@@ -45,10 +45,13 @@ mdurl==0.1.2
     # via markdown-it-py
 numpy==1.26.4
     # via altair
+    # via opencv-contrib-python
     # via pandas
     # via pyarrow
     # via pydeck
     # via streamlit
+opencv-contrib-python==4.10.0.82
+    # via cvapplication
 packaging==24.0
     # via altair
     # via streamlit
