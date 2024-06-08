@@ -105,7 +105,8 @@ def drawMatches(
     """
     (hA, wA) = imageA.shape[:2]
     (hB, wB) = imageB.shape[:2]
-    vis = np.zeros((max(hA, hB), wA + wB, 4), dtype="uint8")
+    (_, _, p) = imageA.shape
+    vis = np.zeros((max(hA, hB), wA + wB, p), dtype="uint8")
     vis[0:hA, 0:wA] = imageA
     vis[0:hB, wA:] = imageB
     for (trainIdx, queryIdx), s in zip(matches, status):
