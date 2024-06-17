@@ -215,7 +215,7 @@ with col2:
 
 st.write(
     """
-    ## 拼接结果
+    ## 实验结果
          """
 )
 if up1 and up2:
