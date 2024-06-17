@@ -8,8 +8,10 @@ import streamlit as st
 from PIL import Image
 import io
 
+st.set_page_config(layout="wide")
+
 """
-# 图像校正
+# 作业2 - 基于SIFT的图像位置校正
 ## 要求：
 将一对图像校正为平行视图，令两幅图像“平行”。如图所示：
  
